@@ -10,19 +10,24 @@ mainClass in assembly := Some("dummy.Dummy")
 
 jarName in assembly := "dummy.jar"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
+libraryDependencies ++= Seq(
+  "test-project" %% "test-project" % "0.1-SNAPSHOT"
+)
 
-libraryDependencies += "junit" % "junit" % "4.12" % "test"
+libraryDependencies ++= Seq(
+  "org.scalatest" %% "scalatest" % "2.2.6" % "test",
+  "junit" % "junit" % "4.12" % "test"
+)
 
 initialCommands in console := """import dummy._"""
 
 sourceGenerators in Compile <+=
  (sourceManaged in Compile, version, name, jarName in assembly) map {
   (dir, version, projectname, jarexe) =>
-  val file = dir / "dummy" / "MetaInfo.scala"
+  val file = dir / "testproject" / "MetaInfo.scala"
   val buildDate = (new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(new java.util.Date())
   IO.write(file,
-  """package dummy
+  """package testproject
     |object MetaInfo { 
     |  val version="%s"
     |  val project="%s"

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dummy
+package testproject
 
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -22,10 +22,12 @@ import org.scalatest.ShouldMatchers
 import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class DummyTest extends FunSuite with ShouldMatchers {
+class TestProjectTest extends FunSuite with ShouldMatchers {
   
   test("Simple test") {
-    Dummy.message should startWith("Hello")
+    val msg = TestProject.message
+    msg should startWith("Hello")
+    info(s"message: $msg")
     info("Test done")
   }
   
