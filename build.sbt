@@ -13,7 +13,7 @@ mainClass in assembly := Some("testproject.TestProject")
 jarName in assembly := "testproject.jar"
 
 libraryDependencies ++= Seq(
-  "testdep" %% "test-dep" % "0.1-SNAPSHOT"
+  "testdep" %% "test-dep" % "0.2-SNAPSHOT"
 )
 
 libraryDependencies ++= Seq(
