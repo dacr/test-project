@@ -1,6 +1,6 @@
 name := "test-project"
 
-organization := "testproject"
+organization := "dummy.test"
 
 version := "0.1-SNAPSHOT"
 
@@ -13,7 +13,7 @@ mainClass in assembly := Some("testproject.TestProject")
 jarName in assembly := "testproject.jar"
 
 libraryDependencies ++= Seq(
-  "testdep" %% "test-dep" % "0.2-SNAPSHOT"
+  "dummy.test" %% "test-dep" % "0.2-SNAPSHOT"
 )
 
 libraryDependencies ++= Seq(
