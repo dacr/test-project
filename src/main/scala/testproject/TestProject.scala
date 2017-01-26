@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-Package testproject
+package testproject
 
 object TestProject {
   import MetaInfo._
