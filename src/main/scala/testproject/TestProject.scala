@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package testproject
+Package testproject
 
 object TestProject {
   import MetaInfo._
   val userName = util.Properties.userName
   val depmsg = testdep.TestDep.getMessage()
-  val message = s"Hello ${userName} by ${project} release ${version} built on ${buildDate} - using dependency ${depmsg}"
+  val message = s"Hello belle fontaine by ${userName} for ${project} release ${version} built on ${buildDate} - using dependency ${depmsg}"
   def main(args:Array[String]) {
     println(message)
   }
